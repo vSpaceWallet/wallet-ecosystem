@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600"
+	height="400" version="1.1">
+	<!-- Background Image with Filter -->
+
+	<image x="0" y="0" width="100%" height="100%"
+		xlink:href="http://wallet-enterprise-diploma-issuer:8000/images/background.png" />
+
+	<defs>
+		<filter id="grayscale-opacity">
+			<feColorMatrix type="matrix"
+				values="0.33 0.33 0.33 0 0
+                                                 0.33 0.33 0.33 0 0
+                                                 0.33 0.33 0.33 0 0
+                                                 0 0 0 0.7 0" />
+		</filter>
+	</defs>
+	<!-- Calculate the position and size to center the image -->
+	<image x="25%" y="10%" width="50%" height="80%"
+		xlink:href="http://wallet-enterprise-diploma-issuer:8000/images/ekpa.png"
+		filter="url(#grayscale-opacity)" opacity="0.4" />
+
+
+	<text x="300" y="60" font-family="math" font-size="20" text-anchor="middle">NATIONAL AND
+		KAPODISTRIAN UNIVERSITY OF ATHENS</text>
+	<text x="300" y="100" font-family="math" font-size="20" font-weight="600" text-anchor="middle">
+		[title]</text>
+
+	<!-- Credential Header -->
+	<text x="300" y="150" font-family="math" font-size="16" text-anchor="middle">
+		<tspan x="300" dy="1.2em">Diploma awarded to [Name]</tspan>
+		<tspan x="300" dy="1.2em">for the completion of '[Title]'</tspan>
+		<tspan x="300" dy="1.2em">with a grade of [Grade].</tspan>
+	</text>
+	<!-- Variable Data -->
+
+	<text x="150" y="300" font-family="math" font-size="16" font-weight="bold" text-anchor="middle">Date
+		of birth</text>
+	<text x="150" y="320" font-family="math" font-size="16" font-weight="normal" text-anchor="middle">
+		[Date]</text>
+
+	<text x="300" y="300" font-family="math" font-size="16" font-weight="bold" text-anchor="middle">Completion
+		date</text>
+	<text x="300" y="320" font-family="math" font-size="16" font-weight="normal" text-anchor="middle">
+		[Date]</text>
+
+	<text x="450" y="300" font-family="math" font-size="16" font-weight="bold" text-anchor="middle">Awarding
+		date</text>
+	<text x="450" y="320" font-family="math" font-size="16" font-weight="normal" text-anchor="middle">
+		[Date]</text>
+
+</svg>
