@@ -125,6 +125,13 @@ export class EdiplomasBlueprint implements SupportedCredentialProtocol {
 				backgroundColor: "#8ebeeb",
 				textColor: "#ffffff"
 			})
+			.setAttribute("renderMethod", {
+				"id": config.url + "/images/vc-template.svg",
+				"type": "SvgRenderingTemplate2023",
+				"name": "Portrait Mode",
+				"css3MediaQuery": "@media (orientation: portrait)",
+				"digestMultibase": "zQmAPdhyxzznFCwYxAp2dRerWC85Wg6wFl9G270iEu5h6JqW"
+			})
 			.setAttribute("credentialSchema", undefined)
 		
 
