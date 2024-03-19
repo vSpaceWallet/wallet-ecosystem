@@ -78,6 +78,54 @@ const bachelorDescriptorSdJwt = {
 	}
 }
 
+const bachelorDescriptorSdJwtWithAdditionalData = {
+	"id": "Bachelor",
+	"constraints": {
+		"fields": [
+			{
+				"path": [ "$.issuer.name" ],
+				"filter": {},
+			},
+			{
+				"path": [ "$.issuer.country" ],
+				"filter": {},
+			},
+
+			{
+				"path": [ '$.type' ],
+				"filter": {
+					"type": 'array',
+					"items": { type: 'string' },
+					"contains": { const: 'Bachelor' }
+				}
+			},
+			{
+				"path": [ "$.credentialSubject.id" ],
+				"filter": {}
+			},
+			{
+				"path": [ "$.credentialSubject.familyName" ],
+				"filter": {}
+			},
+			{
+				"path": [ "$.credentialSubject.firstName" ],
+				"filter": {}
+			},
+			{
+				"path": [ "$.credentialSubject.eqfLevel" ],
+				"filter": {},
+			},
+			{
+				"path": [ "$.credentialSubject.dateStart" ],
+				"filter": {},
+			},
+			{
+				"path": [ "$.credentialSubject.mainFieldOfStudy" ],
+				"filter": {},
+			},
+		]
+	}
+}
 const europeanHealthInsuranceCardDescriptor = {
 	"id": "EuropeanHealthInsuranceCard",
 	"constraints": {
@@ -151,6 +199,16 @@ const minimalBachelorSdJwtPresentationDefinition = {
 	]
 }
 
+const mastersApplicationPresentationDefinition = {
+	"id": "MastersApplication",
+	"title": "Apply for Masters",
+	"description": "Required fields: familyName, firstName, eqfLevel, issuer name, issuer country, main field of study",
+	"format": { "vc+sd-jwt": { alg: [ 'ES256' ] } },
+	"input_descriptors": [
+		bachelorDescriptorSdJwtWithAdditionalData
+	]
+}
+
 // const projectManagerPresentationDefinition = {
 // 	"id": "Multiple", // scope name
 // 	"title": "Project Manager",
@@ -198,6 +256,7 @@ export class VerifierConfigurationService implements VerifierConfigurationInterf
 
 	getPresentationDefinitions(): PresentationDefinitionTypeWithFormat[] {
 		return [
+			mastersApplicationPresentationDefinition,
 			minimalBachelorSdJwtPresentationDefinition,
 			{
 				"id": "VerifiableId",
