@@ -58,7 +58,11 @@ const issuerSigner: CredentialSigner = {
 		payload.iat = Math.floor(issuanceDate.getTime() / 1000);
 
 		payload.iss = did;
-		payload.vc.issuer = did;
+		payload.vc.issuer = {
+			id: did,
+			name: "National VID Issuer",
+			country: "Greece",
+		};
 
 		payload.sub = payload.vc.credentialSubject.id;
 		

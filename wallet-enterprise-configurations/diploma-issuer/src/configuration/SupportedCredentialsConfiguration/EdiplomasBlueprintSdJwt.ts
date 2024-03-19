@@ -115,6 +115,8 @@ export class EdiplomasBlueprintSdJwt implements SupportedCredentialProtocol {
 				"blueprintId": this.blueprintID,
 				"completionDate": diploma.completionDate,
 				"awardingDate": diploma.awardingDate,
+				"mainFieldOfStudy": diploma.diplomaTitle,
+				"dateStart": diploma.completionDate, // dateStart is not provided by the backend, so will use completionDate as fallback 
 				"achievement": {
 					"name": "University Degree Credential",
 					"description": "A Europass Diploma issued by the University of Athens",
@@ -143,6 +145,7 @@ export class EdiplomasBlueprintSdJwt implements SupportedCredentialProtocol {
 					blueprintId: true,
 					completionDate: true,
 					awardingDate: true,
+					mainFieldOfStudy: true,
 				}
 			}
 		}
