@@ -112,6 +112,10 @@ const bachelorDescriptorSdJwtWithAdditionalData = {
 				"filter": {}
 			},
 			{
+				"path": [ "$.credentialSubject.diplomaTitle" ],
+				"filter": {},
+			},
+			{
 				"path": [ "$.credentialSubject.eqfLevel" ],
 				"filter": {},
 			},
